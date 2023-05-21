@@ -1,0 +1,16 @@
+---
+name: "\U0001F41E BUG"
+description: Bug 내용을 입력해주세요.
+body:
+  - type: textarea
+    attributes:
+      label: Describe
+      description: |
+        [Description] 버그에 대한 설명을 작성해주세요.
+      placeholder: |
+        
+  - type: textarea
+    attributes:
+      label: Additional
+      description: |
+        [추가사항] 추가사항을 작성해주세요
