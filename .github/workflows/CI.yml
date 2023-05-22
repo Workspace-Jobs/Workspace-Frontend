@@ -34,22 +34,20 @@ jobs:
       if: ${{ success() }}
       with:
         webhook: ${{ secrets.DISCORD_WEBHOOK_CI }}
-        title: "🎉 WORKSPACE CI successfully"
-        description: "CI success"
-        content: "success!!!"
+        title: "🎉 CI successfully"
+        description: "CI success!!!"
         username: WORKSPACE CI bot
         url: "https://github.com/Workspace-Jobs/Workspace-Frontend"
-        color: 4CAF50
+        color: 00FF00
 
     - name: Failure notification to discord
       uses: sarisia/actions-status-discord@v1
       if: ${{ failure() }}
       with:
         webhook: ${{ secrets.DISCORD_WEBHOOK_CI }}
-        title: "❌ WORKSPACE CI failed"
-        description: "CI failed"
-        content: "failed..."
+        title: "❌ CI failed"
+        description: "CI failed..."
         username: WORKSPACE CI bot
         url: "https://github.com/Workspace-Jobs/Workspace-Frontend"
-        color: e74c3c
+        color: FF0000
 
