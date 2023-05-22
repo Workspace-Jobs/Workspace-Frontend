@@ -1,28 +1,15 @@
 import React from 'react'
 import { Global, css } from '@emotion/react'
 
-const lightTheme = `
-  --PRIMARY_P1 : #6F7AEC;
-  --PRIMARY_P2 : #EEF0FD;
-  --PRIMARY_P3 : #C5CAF7;
-  --NATURAL_N1: #999999,
-  --BACKGROUND_BG : #F7F7F9;
-  --BACKGROUND_CARD : #FDFDFD;
-  --BACKGROUND_CARD2 : #FDFDFD;
-  --SYSTEM_ERROR : #D84D4D;
-`
-
-const cssVar = (name: string) => `var(--${name})`
-
 export const Palette = {
-  PRIMARY_P1: cssVar('PRIMARY_P1'),
-  PRIMARY_P2: cssVar('PRIMARY_P2'),
-  PRIMARY_P3: cssVar('PRIMARY_P3'),
-  NATURAL_N1: cssVar('NATURAL_N1'),
-  BACKGROUND_BG: cssVar('BACKGROUND_BG'),
-  BACKGROUND_CARD: cssVar('BACKGROUND_CARD'),
-  BACKGROUND_CARD2: cssVar('BACKGROUND_CARD2'),
-  SYSTEM_ERROR: cssVar('SYSTEM_ERROR'),
+  PRIMARY_P1: '#6F7AEC',
+  PRIMARY_P2: '#EEF0FD',
+  PRIMARY_P3: '#C5CAF7',
+  NATURAL_N1: '#999999',
+  BACKGROUND_BG: '#F2F4F7',
+  BACKGROUND_CARD: '#F5F5F8',
+  BACKGROUND_CARD2: '#F5F5F5',
+  SYSTEM_ERROR: '#FF5D5D',
   BLACK: '#000000',
   WHITE: '#ffffff',
 }
