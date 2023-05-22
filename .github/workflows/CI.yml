@@ -29,4 +29,27 @@ jobs:
     - run: yarn install --frozen-lockfile
     - run: yarn build
 
-    
+    - name: Success notification to discord
+      uses: sarisia/actions-status-discord@v1.11.0
+      if: ${{ success() }}
+      with:
+        webhook: ${{ secrets.WEBHOOK }}
+        title: "🎉 WORKSPACE CI successfully"
+        description: "CI success"
+        content: "success!!!"
+        username: WORKSPACE CI bot
+        url: "https://github.com/Workspace-Jobs/Workspace-Frontend"
+        color: 4CAF50
+
+    - name: Failure notification to discord
+      uses: sarisia/actions-status-discord@v1.11.0
+      if: ${{ failure() }}
+      with:
+        webhook: ${{ secrets.WEBHOOK }}
+        title: "❌ WORKSPACE CI failed"
+        description: "CI failed"
+        content: "failed..."
+        username: WORKSPACE CI bot
+        url: "https://github.com/Workspace-Jobs/Workspace-Frontend"
+        color: e74c3c
+
