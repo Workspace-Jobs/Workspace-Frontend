@@ -30,7 +30,7 @@ jobs:
     - run: yarn build
 
     - name: Success notification to discord
-      uses: appleboy/discord-action@master
+      uses: sarisia/actions-status-discord@v1
       if: ${{ success() }}
       with:
         webhook: ${{ secrets.DISCORD_WEBHOOK_CI }}
@@ -42,7 +42,7 @@ jobs:
         color: 4CAF50
 
     - name: Failure notification to discord
-      uses: appleboy/discord-action@master
+      uses: sarisia/actions-status-discord@v1
       if: ${{ failure() }}
       with:
         webhook: ${{ secrets.DISCORD_WEBHOOK_CI }}
