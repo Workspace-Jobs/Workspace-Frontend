@@ -1,0 +1,53 @@
+name: WORKSPACE-CI
+
+on:
+  push:
+    branches:
+      - 'develop'
+      - 'main'
+  pull_request:
+    branches:
+      - 'develop'
+      - 'main'
+
+jobs:
+  WORKSPACE-CI:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'yarn'
+
+    - run: yarn install --frozen-lockfile
+    - run: yarn build
+
+    - name: Success notification to discord
+      uses: sarisia/actions-status-discord@v1
+      if: ${{ success() }}
+      with:
+        webhook: ${{ secrets.DISCORD_WEBHOOK_CI }}
+        title: "🎉 CI successfully"
+        description: "CI success!!!"
+        username: WORKSPACE CI bot
+        url: "https://github.com/Workspace-Jobs/Workspace-Frontend"
+        color: 00FF00
+
+    - name: Failure notification to discord
+      uses: sarisia/actions-status-discord@v1
+      if: ${{ failure() }}
+      with:
+        webhook: ${{ secrets.DISCORD_WEBHOOK_CI }}
+        title: "❌ CI failed"
+        description: "CI failed..."
+        username: WORKSPACE CI bot
+        url: "https://github.com/Workspace-Jobs/Workspace-Frontend"
+        color: FF0000
+
