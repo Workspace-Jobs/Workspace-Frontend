@@ -1,30 +1,3 @@
 {
-  "root": true,
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "prettier"],
-  "parserOptions": {
-    "createDefaultProgram": true
-  },
-  "env": {
-    "browser": true,
-    "node": true,
-    "es6": true
-  },
-  "ignorePatterns": ["node_modules/"],
-  "extends": [
-    "airbnb",
-    "airbnb-typescript",
-    "airbnb/hooks",
-    "next/core-web-vitals",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-    "prettier"
-  ],
-  "rules": {
-    "react/react-in-jsx-scope": "off",
-    "react/jsx-props-no-spreading": 0,
-    "@typescript-eslint/semi": "off",
-    "react/jsx-filename-extension": ["warn", { "extensions": [".ts", ".tsx"] }],
-    "no-useless-catch": "off"
-  }
+  "extends": "next/core-web-vitals"
 }
