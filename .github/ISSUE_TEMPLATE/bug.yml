@@ -1,5 +1,4 @@
----
-name: "\U0001F41E BUG"
+name: "🐞 BUG"
 description: Bug 내용을 입력해주세요.
 body:
   - type: textarea
