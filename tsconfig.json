@@ -16,6 +16,11 @@
     "incremental": true,
     "baseUrl": "src"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/assets/svg/WorkspaceLogo.tsx"
+  ],
   "exclude": ["node_modules"]
 }

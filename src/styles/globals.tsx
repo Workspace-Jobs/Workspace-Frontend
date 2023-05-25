@@ -2,9 +2,9 @@ import React from 'react'
 import { Global, css } from '@emotion/react'
 
 export const Palette = {
-  PRIMARY_P1: '#6F7AEC',
-  PRIMARY_P2: '#EEF0FD',
-  PRIMARY_P3: '#C5CAF7',
+  PRIMARY_P1: '#699BF7',
+  PRIMARY_P2: '#8C91FF',
+  PRIMARY_P3: '#EFF5FF',
   NATURAL_N1: '#999999',
   BACKGROUND_BG: '#F2F4F7',
   BACKGROUND_CARD: '#F5F5F8',
