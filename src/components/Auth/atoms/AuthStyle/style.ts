@@ -35,7 +35,7 @@ export const BottonWrapper = styled.div`
 `
 
 export const BottomText = styled.div`
-  color: ${Palette.NATURAL_N1};
+  color: ${Palette.NEUTRAL_N1};
   font-size: 14px;
   font-weight: 400;
   cursor: pointer;
