@@ -22,7 +22,7 @@ export const AuthInput = styled.div`
     transition: all 0.3s all;
     padding-left: 15px;
     ::placeholder {
-      color: ${Palette.NATURAL_N1};
+      color: ${Palette.NEUTRAL_N1};
     }
     :-webkit-autofill {
       -webkit-box-shadow: 0 0 0 1000px ${Palette.WHITE} inset !important;

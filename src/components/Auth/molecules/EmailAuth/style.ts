@@ -34,7 +34,7 @@ export const Description = styled.div`
 `
 
 export const Caution = styled.div`
-  color: ${Palette.NATURAL_N1};
+  color: ${Palette.NEUTRAL_N1};
   font-size: 14px;
   font-weight: 400;
 `
