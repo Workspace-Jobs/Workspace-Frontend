@@ -9,3 +9,15 @@ export interface AuthInputProps
   register: UseFormRegisterReturn
   isValue?: boolean
 }
+
+export interface AuthForm {
+  email?: string
+  password?: string
+  passwordCheck?: string
+}
+
+export interface AuthBtnProps {
+  text: string
+  type: 'button' | 'submit'
+  onClick?: () => void
+}
