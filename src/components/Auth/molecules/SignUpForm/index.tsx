@@ -1,6 +1,6 @@
 import { SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form'
 import AuthInput from 'components/Auth/atoms/AuthInput'
-import { AuthForm } from 'types'
+import { AuthForm } from 'types/components/Auth'
 import { RegexsData } from 'assets/data/RegexsData'
 import {
   BottomText,

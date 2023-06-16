@@ -1,6 +1,6 @@
 import * as S from './style'
 import { useState } from 'react'
-import { AuthInputProps } from 'types'
+import { AuthInputProps } from 'types/components/Auth'
 import { EyeCloseIcon, EyeIcon } from 'assets/svg'
 
 const AuthInput = ({

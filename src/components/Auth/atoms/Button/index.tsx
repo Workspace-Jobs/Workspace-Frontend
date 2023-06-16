@@ -1,4 +1,4 @@
-import { AuthBtnProps } from 'types'
+import { AuthBtnProps } from 'types/components/Auth'
 import * as S from './style'
 
 const Button = ({ text, type, onClick }: AuthBtnProps) => {
