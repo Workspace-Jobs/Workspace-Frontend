@@ -1,7 +1,13 @@
-import { CommonTemplate } from 'components/common/templates/CommonTemplate/style'
+import Home from 'components/Home/organisms/Home'
+import Header from 'components/common/molecules/Header'
 
-const Home = () => {
-  return <CommonTemplate>HOME</CommonTemplate>
+const HomePage = () => {
+  return (
+    <>
+      <Header />
+      <Home />
+    </>
+  )
 }
 
-export default Home
+export default HomePage
