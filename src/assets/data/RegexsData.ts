@@ -1,4 +1,4 @@
-import { RegexsDataType } from 'types'
+import { RegexsDataType } from 'types/Assets'
 
 export const RegexsData: RegexsDataType = {
   EMAIL: /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
