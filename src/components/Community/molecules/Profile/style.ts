@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import { Palette } from 'styles/globals'
 
 export const Wrapper = styled.div`
-  width: 20%;
+  width: 100%;
   border: 1px solid ${Palette.NEUTRAL_N1};
   border-radius: 8px;
   display: flex;
