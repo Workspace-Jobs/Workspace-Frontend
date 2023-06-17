@@ -1,5 +1,5 @@
 import Button from 'components/Community/atoms/Button'
-import Profile from '../Profile'
+import Profile from 'components/common/molecules/Profile'
 import * as S from './style'
 import { Palette } from 'styles/globals'
 import { useRecoilState } from 'recoil'
