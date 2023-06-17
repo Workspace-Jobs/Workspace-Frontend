@@ -38,3 +38,14 @@ export const PostFilterData = [
   'VR 엔지니어',
   'CIO,Chief Information Officer',
 ]
+
+export const CommunityFilterData = [
+  '전체',
+  '취업/이직',
+  '면접',
+  '조직문화',
+  '회사생활',
+  '커리어고민',
+  '개발',
+  '라이프스타일',
+]
