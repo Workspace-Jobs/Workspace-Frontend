@@ -52,4 +52,19 @@ export const UserInfo = styled.div`
     font-size: 14px;
     font-weight: 700;
   }
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+`
+
+export const ProfilImg = styled.div`
+  position: relative;
+  width: 30px;
+  height: 30px;
+  img {
+    border-radius: 50%;
+  }
 `
