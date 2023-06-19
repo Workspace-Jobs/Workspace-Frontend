@@ -9,3 +9,13 @@ export const statusValue = atom<string>({
   key: 'statusValue',
   default: '0',
 })
+
+export const pageNum = atom<string>({
+  key: 'pageNum',
+  default: '1',
+})
+
+export const isLoginValue = atom<boolean>({
+  key: 'isLoginValue',
+  default: false,
+})

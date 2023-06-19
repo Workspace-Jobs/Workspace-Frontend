@@ -2,10 +2,34 @@ import Link from 'next/link'
 import * as S from './style'
 import * as SVG from 'assets/svg'
 import { useRouter } from 'next/router'
+import { getUserInfo } from 'api/member'
+import { useEffect, useState } from 'react'
+import { isLogin } from 'utils/isLogin'
+import Image from 'next/image'
+import { getImgUrl } from 'utils/getImgUrl'
+import { useSetRecoilState } from 'recoil'
+import { isLoginValue } from 'Atoms/recoilAtom'
 
 const Header = () => {
   const router = useRouter()
   const path = router.pathname
+  const [userName, setUserName] = useState('')
+  const [userImg, setUserImg] = useState('')
+  const setLogin = useSetRecoilState(isLoginValue)
+
+  useEffect(() => {
+    isLogin().then((res) => {
+      if (!res) return setLogin(false)
+      if (res) {
+        getUserInfo().then((res) => {
+          console.log(res?.data)
+          setUserName(res?.data.username)
+          setUserImg(getImgUrl(res?.data.profile))
+          setLogin(true)
+        })
+      }
+    })
+  }, [])
 
   return (
     <S.Header>
@@ -26,10 +50,24 @@ const Header = () => {
         </S.MenuWrapper>
         <S.UserInfo>
           <SVG.SearchIcon />
-          <SVG.AlramIcon />
-          <Link href={'/auth/signup'}>
-            <p>회원가입/로그인</p>
-          </Link>
+          {userName !== '' ? (
+            <div onClick={() => router.push('/my')}>
+              <S.ProfilImg>
+                <Image
+                  alt="Thumbnail img"
+                  src={userImg}
+                  sizes="100%"
+                  layout="fill"
+                  priority={true}
+                />
+              </S.ProfilImg>
+              {userName}
+            </div>
+          ) : (
+            <Link href={'/auth/signup'}>
+              <p>회원가입/로그인</p>
+            </Link>
+          )}
         </S.UserInfo>
       </S.HeaderWrapper>
     </S.Header>

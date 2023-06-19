@@ -1,12 +1,17 @@
+import { isLoginValue } from 'Atoms/recoilAtom'
 import * as S from './style'
 import * as SVG from 'assets/svg'
 import Link from 'next/link'
+import { useRecoilValue } from 'recoil'
+import { logout } from 'utils/Libs/logout'
 
 const Profile = () => {
+  const Login = useRecoilValue(isLoginValue)
+
   return (
     <S.Wrapper>
       <S.Title>
-        {true ? (
+        {!Login ? (
           <Link href="/auth/signup" passHref>
             <div>
               <SVG.LogoutIcon />
@@ -16,7 +21,7 @@ const Profile = () => {
         ) : (
           <>
             손정민님 반가워요 👋
-            <p onClick={() => console.log('logout')}>로그아웃</p>
+            <p onClick={() => logout()}>로그아웃</p>
           </>
         )}
       </S.Title>
@@ -27,7 +32,7 @@ const Profile = () => {
             프로필
           </S.Content>
         </Link>
-        <Link href="resume">
+        <Link href="/resume">
           <S.Content>
             <SVG.ResumeIcon />
             이력서 추가
