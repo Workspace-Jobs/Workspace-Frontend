@@ -10,17 +10,25 @@ import {
 import Button from 'components/Auth/atoms/Button'
 import { isNotNull } from 'utils/isNotNull'
 import Link from 'next/link'
+import { toast } from 'react-toastify'
+import { signup } from 'api/member'
 
 const SignUpForm = ({ setLocate }: { setLocate: (locate: number) => void }) => {
   const { register, watch, handleSubmit } = useForm<AuthForm>()
 
-  const onSubmit: SubmitHandler<AuthForm> = (e) => {
-    setLocate(2)
-    console.log(e)
+  const onSubmit: SubmitHandler<AuthForm> = async (e) => {
+    if (e.password !== e.passwordCheck)
+      return toast.error('비밀번호확인과 비밀번호가 다릅니다.')
+    if (await signup(e.email, e.password, e.passwordCheck)) {
+      setLocate(2)
+    }
   }
   const onError: SubmitErrorHandler<AuthForm> = (e) => {
-    console.log(e)
+    toast.error(
+      e.email?.message || e.password?.message || e.passwordCheck?.message,
+    )
   }
+
   return (
     <>
       <InputsWrapper>
