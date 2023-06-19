@@ -15,9 +15,9 @@ const BottomContent = () => {
           </S.Header>
         </Link>
         <S.ContentWrapper>
+          {/* <PostItem />
           <PostItem />
-          <PostItem />
-          <PostItem />
+          <PostItem /> */}
         </S.ContentWrapper>
       </S.Wrapper>
       <S.Wrapper>
@@ -29,11 +29,11 @@ const BottomContent = () => {
         </Link>
         <S.ContentWrapper>
           <div>
+            {/* <CommunityItem />
             <CommunityItem />
             <CommunityItem />
             <CommunityItem />
-            <CommunityItem />
-            <CommunityItem />
+            <CommunityItem /> */}
           </div>
         </S.ContentWrapper>
       </S.Wrapper>

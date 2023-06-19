@@ -6,7 +6,7 @@ const Bookmark = () => {
   return (
     <CommonTemplate>
       <CommonTitle title="북마크" />
-      <Announcement />
+      {/* <Announcement /> */}
     </CommonTemplate>
   )
 }

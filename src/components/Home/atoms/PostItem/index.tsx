@@ -13,7 +13,7 @@ const PostItem = ({ id, title, img1, user, date }: EmployListProps) => {
   const url = getImgUrl(img1)
 
   return (
-    <Link href={`detail/${id}`} passHref>
+    <Link href={`/detail/${id}`} passHref>
       <S.Wrapper>
         <S.Thumbnail>
           <Image
