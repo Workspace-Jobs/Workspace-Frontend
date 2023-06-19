@@ -22,7 +22,6 @@ const Header = () => {
       if (!res) return setLogin(false)
       if (res) {
         getUserInfo().then((res) => {
-          console.log(res?.data)
           setName(res?.data.username)
           setUserImg(getImgUrl(res?.data.profile))
           setLogin(true)
@@ -53,13 +52,15 @@ const Header = () => {
           {name !== '' ? (
             <div onClick={() => router.push('/my')}>
               <S.ProfilImg>
-                <Image
-                  alt="Thumbnail img"
-                  src={userImg}
-                  sizes="100%"
-                  layout="fill"
-                  priority={true}
-                />
+                {userImg && (
+                  <Image
+                    alt="Thumbnail img"
+                    src={userImg}
+                    sizes="100%"
+                    layout="fill"
+                    priority={true}
+                  />
+                )}
               </S.ProfilImg>
               {name}
             </div>
