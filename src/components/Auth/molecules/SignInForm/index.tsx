@@ -10,15 +10,22 @@ import {
 import Button from 'components/Auth/atoms/Button'
 import { isNotNull } from 'utils/isNotNull'
 import Link from 'next/link'
+import { toast } from 'react-toastify'
+import { signin } from 'api/member'
+import { useRouter } from 'next/router'
 
 const SignInForm = () => {
+  const router = useRouter()
   const { register, watch, handleSubmit } = useForm<AuthForm>()
 
-  const onSubmit: SubmitHandler<AuthForm> = (e) => {
+  const onSubmit: SubmitHandler<AuthForm> = async (e) => {
     console.log(e)
+    if (await signin(e.email, e.password)) {
+      router.push('/')
+    }
   }
   const onError: SubmitErrorHandler<AuthForm> = (e) => {
-    console.log(e)
+    toast.error(e.email?.message || e.password?.message)
   }
   return (
     <>
