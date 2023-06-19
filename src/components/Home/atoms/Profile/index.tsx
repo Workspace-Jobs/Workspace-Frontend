@@ -1,4 +1,4 @@
-import { isLoginValue } from 'Atoms/recoilAtom'
+import { isLoginValue, userName } from 'Atoms/recoilAtom'
 import * as S from './style'
 import * as SVG from 'assets/svg'
 import Link from 'next/link'
@@ -7,6 +7,7 @@ import { logout } from 'utils/Libs/logout'
 
 const Profile = () => {
   const Login = useRecoilValue(isLoginValue)
+  const name = useRecoilValue(userName)
 
   return (
     <S.Wrapper>
@@ -20,7 +21,7 @@ const Profile = () => {
           </Link>
         ) : (
           <>
-            손정민님 반가워요 👋
+            {name}님 반가워요 👋
             <p onClick={() => logout()}>로그아웃</p>
           </>
         )}

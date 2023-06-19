@@ -19,3 +19,8 @@ export const isLoginValue = atom<boolean>({
   key: 'isLoginValue',
   default: false,
 })
+
+export const userName = atom<string>({
+  key: 'userName',
+  default: '',
+})

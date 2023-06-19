@@ -7,15 +7,15 @@ import { useEffect, useState } from 'react'
 import { isLogin } from 'utils/isLogin'
 import Image from 'next/image'
 import { getImgUrl } from 'utils/getImgUrl'
-import { useSetRecoilState } from 'recoil'
-import { isLoginValue } from 'Atoms/recoilAtom'
+import { useRecoilState, useSetRecoilState } from 'recoil'
+import { isLoginValue, userName } from 'Atoms/recoilAtom'
 
 const Header = () => {
   const router = useRouter()
   const path = router.pathname
-  const [userName, setUserName] = useState('')
   const [userImg, setUserImg] = useState('')
   const setLogin = useSetRecoilState(isLoginValue)
+  const [name, setName] = useRecoilState(userName)
 
   useEffect(() => {
     isLogin().then((res) => {
@@ -23,7 +23,7 @@ const Header = () => {
       if (res) {
         getUserInfo().then((res) => {
           console.log(res?.data)
-          setUserName(res?.data.username)
+          setName(res?.data.username)
           setUserImg(getImgUrl(res?.data.profile))
           setLogin(true)
         })
@@ -50,7 +50,7 @@ const Header = () => {
         </S.MenuWrapper>
         <S.UserInfo>
           <SVG.SearchIcon />
-          {userName !== '' ? (
+          {name !== '' ? (
             <div onClick={() => router.push('/my')}>
               <S.ProfilImg>
                 <Image
@@ -61,7 +61,7 @@ const Header = () => {
                   priority={true}
                 />
               </S.ProfilImg>
-              {userName}
+              {name}
             </div>
           ) : (
             <Link href={'/auth/signup'}>
