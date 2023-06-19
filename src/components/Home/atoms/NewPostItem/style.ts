@@ -28,12 +28,24 @@ export const Location = styled.div`
 `
 
 export const D_Day = styled.div`
-  width: 30px;
   display: flex;
-  justify-content: center;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 500;
-  padding: 4px;
-  background: ${Palette.PRIMARY_P3};
+  justify-content: flex-start;
+  p {
+    display: flex;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px;
+    background: ${Palette.PRIMARY_P3};
+  }
+`
+
+export const ProfilImg = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  img {
+    border-radius: 4px;
+  }
 `
