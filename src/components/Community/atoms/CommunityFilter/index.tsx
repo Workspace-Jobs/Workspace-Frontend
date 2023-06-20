@@ -5,12 +5,14 @@ import FilterItem from 'components/common/atoms/FilterItem'
 const CommunityFilter = ({
   menu,
   onClick,
+  style,
 }: {
   menu: string
   onClick: (filterMenu: string) => void
+  style?: string
 }) => {
   return (
-    <S.Wrapper>
+    <S.Wrapper style={{ border: `${style}`, padding: `${style ? '0' : ''}` }}>
       {CommunityFilterData.map((e, ind) => (
         <FilterItem
           key={ind}

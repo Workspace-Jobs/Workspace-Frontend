@@ -1,16 +1,25 @@
-import * as S from './style'
+import { coFilterMenu } from 'Atoms/recoilAtom'
 import CommunityFilter from 'components/Community/atoms/CommunityFilter'
 import CommunityItem from 'components/Community/atoms/CommunityItem'
-import { useState } from 'react'
+import { useRecoilState } from 'recoil'
+import * as S from './style'
+import { CommunitylistType } from 'types/components/Community'
 
-const CommunityList = () => {
-  const [filterMenu, setFilterMenu] = useState('전체')
+const CommunityList = ({ list }: CommunitylistType) => {
+  const [filterMenu, setFilterMenu] = useRecoilState(coFilterMenu)
 
   return (
     <S.Wrapper>
       <CommunityFilter menu={filterMenu} onClick={setFilterMenu} />
-      {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((e, ind) => (
-        <CommunityItem key={ind} />
+      {list?.map((e, ind) => (
+        <CommunityItem
+          key={ind}
+          id={e.id}
+          user={e.user}
+          title={e.title}
+          good_cnt={e.good_cnt}
+          created_date={e.created_date}
+        />
       ))}
     </S.Wrapper>
   )

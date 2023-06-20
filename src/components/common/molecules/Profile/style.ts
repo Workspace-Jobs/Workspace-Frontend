@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
 `
 
 export const ProfileIMG = styled.div`
+  position: relative;
   width: 80px;
   height: 80px;
   border-radius: 50%;

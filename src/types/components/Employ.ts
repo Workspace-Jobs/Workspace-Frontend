@@ -1,5 +1,10 @@
 import { ModalType } from 'types/common/Modal'
 
+export interface EmployFilterType extends ModalType {
+  menu: string
+  onClick: (filterMenu: string) => void
+}
+
 export interface EmployListProps {
   id: number
   title: string
