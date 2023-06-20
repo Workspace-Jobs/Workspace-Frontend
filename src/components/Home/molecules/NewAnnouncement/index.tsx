@@ -1,7 +1,7 @@
 import * as S from './style'
 import NewListItem from 'components/Home/atoms/NewPostItem'
 import Profile from 'components/Home/atoms/Profile'
-import { EmploylistType } from 'types/components/Employment'
+import { EmploylistType } from 'types/components/Employ'
 
 const NewAnnouncement = ({ list }: EmploylistType) => {
   return (
