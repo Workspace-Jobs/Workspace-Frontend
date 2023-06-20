@@ -34,3 +34,7 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `
+
+export const Tag = styled.div`
+  display: flex;
+`
