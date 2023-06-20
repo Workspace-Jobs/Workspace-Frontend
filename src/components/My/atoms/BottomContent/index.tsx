@@ -37,6 +37,17 @@ const BottomContent = () => {
           </div>
         </S.ContentWrapper>
       </S.Wrapper>
+      <S.Wrapper>
+        <Link href="/my/asd">
+          <S.Header>
+            <p>내 글</p>
+            <SVG.ArrowIcon />
+          </S.Header>
+        </Link>
+        <S.ContentWrapper>
+          <div></div>
+        </S.ContentWrapper>
+      </S.Wrapper>
     </div>
   )
 }
