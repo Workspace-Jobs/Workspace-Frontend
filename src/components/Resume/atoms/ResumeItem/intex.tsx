@@ -1,9 +1,16 @@
+import { ResumeListProps } from 'types/components/Resume'
 import * as S from './style'
+import { getResumeDetail } from 'api/resume'
 
-const ResumeItem = () => {
+const ResumeItem = ({ id, user, name }: ResumeListProps) => {
+  const ru = () => {
+    getResumeDetail(id).then((res) => {
+      console.log(res)
+    })
+  }
   return (
-    <S.Wrapper>
-      <h3>이력서 이름</h3>
+    <S.Wrapper onClick={() => ru()}>
+      <h3>{name}</h3>
     </S.Wrapper>
   )
 }
