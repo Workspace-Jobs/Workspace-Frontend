@@ -2,16 +2,18 @@ import { useState } from 'react'
 import * as S from './style'
 import * as SVG from 'assets/svg'
 import FilterMenuModal from 'components/Employment/atoms/FilterMenuModal'
+import { useRecoilState } from 'recoil'
+import { filterMenu } from 'Atoms/recoilAtom'
 
 const Filter = () => {
   const [filterModal, setFilterModal] = useState(false)
-  const [filterMenu, setFilterMenu] = useState('개발 전체')
+  const [menu, setMenu] = useRecoilState(filterMenu)
 
   return (
     <S.Section>
       <S.Wrapper>
         <S.Title>개발</S.Title>
-        <S.FilterName>{filterMenu}</S.FilterName>
+        <S.FilterName>{menu}</S.FilterName>
         <S.FilterBtn
           active={filterModal}
           onClick={() => setFilterModal((pre) => !pre)}
@@ -20,8 +22,8 @@ const Filter = () => {
         </S.FilterBtn>
         {filterModal && (
           <FilterMenuModal
-            menu={filterMenu}
-            onClick={setFilterMenu}
+            menu={menu}
+            onClick={setMenu}
             modalState={filterModal}
             setModalState={setFilterModal}
           />
