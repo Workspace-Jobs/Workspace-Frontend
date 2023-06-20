@@ -1,4 +1,3 @@
-import { EmployListProps } from 'types/components/employment'
 import * as S from './style'
 import Link from 'next/link'
 import Image from 'next/image'

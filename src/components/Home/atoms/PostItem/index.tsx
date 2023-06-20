@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getBookmark } from 'api/employment'
 import { getImgUrl } from 'utils/getImgUrl'
-import { EmployListProps } from 'types/components/employment'
+import { EmployListProps } from 'types/components/Employment'
 
 const PostItem = ({ id, title, img1, user, date }: EmployListProps) => {
   const bookmark = async () => {
