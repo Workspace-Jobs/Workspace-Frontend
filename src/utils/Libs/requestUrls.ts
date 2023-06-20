@@ -8,19 +8,19 @@ export const MemberController = {
 
 export const ResumeController = {
   resume: '/user/resume/',
-  getResume(id: string) {
+  getResume(id: number) {
     return `/user/resume/${id}`
   },
 }
 
 export const CommunityController = {
   postCommunity: '/NB/',
-  community(id: string) {
+  community(id: string | string[] | number | undefined) {
     return `/NB/${id}`
   },
   getCommunityList: `/NB/list/`,
   tagCommunity: `/NB/list/tag/`,
-  likeCommunity(id: string) {
+  likeCommunity(id: number | undefined) {
     return `/NB/good/${id}`
   },
 }
@@ -29,7 +29,7 @@ export const EmplymentController = {
   employment: '/EM/',
   employmentJob: '/EM/job/',
   employmentSearch: '/EM/search/',
-  employmentDetail(id: string) {
+  employmentDetail(id: string | string[] | undefined) {
     return `/EM/${id}`
   },
   employmentBookmark(id: number) {
