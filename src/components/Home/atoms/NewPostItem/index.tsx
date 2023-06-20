@@ -1,8 +1,8 @@
-import { EmployListProps } from 'types/components/employment'
 import * as S from './style'
 import Link from 'next/link'
 import Image from 'next/image'
 import { getImgUrl } from 'utils/getImgUrl'
+import { EmployListProps } from 'types/components/Employment'
 
 const NewPostItem = ({ id, title, img1, user, date }: EmployListProps) => {
   const url = getImgUrl(img1)

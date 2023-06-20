@@ -1,6 +1,6 @@
 import ListItem from 'components/Home/atoms/PostItem'
-import { EmploylistType } from 'types/components/employment'
 import * as S from './style'
+import { EmploylistType } from 'types/components/Employment'
 
 const Announcement = ({ list }: EmploylistType) => {
   return (

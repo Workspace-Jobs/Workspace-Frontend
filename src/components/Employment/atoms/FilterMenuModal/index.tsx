@@ -1,15 +1,20 @@
 import { PostFilterData } from 'assets/data/FilterData'
-import * as S from './style'
 import FilterItem from 'components/common/atoms/FilterItem'
 import { ModalOverayWrapper } from 'components/common/atoms/ModalOverayWrapper/style'
-import { FilterType } from 'types/components/employment'
+import * as S from './style'
+import { ModalType } from 'types/common/Modal'
+
+interface EmployFilterType extends ModalType {
+  menu: string
+  onClick: (filterMenu: string) => void
+}
 
 const FilterMenuModal = ({
   menu,
   onClick,
   modalState,
   setModalState,
-}: FilterType) => {
+}: EmployFilterType) => {
   return (
     <>
       <ModalOverayWrapper

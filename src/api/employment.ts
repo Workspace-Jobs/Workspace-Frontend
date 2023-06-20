@@ -9,9 +9,7 @@ export const getEmployment = async (id: string) => {
       },
     })
     return { data }
-  } catch (e: any) {
-    console.log(e)
-  }
+  } catch (e: any) {}
 }
 
 export const getBookmark = async (id: number) => {
@@ -20,7 +18,28 @@ export const getBookmark = async (id: number) => {
       EmplymentController.employmentBookmark(id),
     )
     return { data }
-  } catch (e: any) {
-    console.log(e)
-  }
+  } catch (e: any) {}
+}
+
+export const getJobEmployment = async (id: string, job: string) => {
+  try {
+    const { data } = await apiClient.get(EmplymentController.employmentJob, {
+      params: {
+        page: id,
+        job: job,
+      },
+    })
+    return { data }
+  } catch (e: any) {}
+}
+
+export const getEmploymentDetail = async (
+  id: string | string[] | undefined,
+) => {
+  try {
+    const { data } = await apiClient.get(
+      EmplymentController.employmentDetail(id),
+    )
+    return { data }
+  } catch (e: any) {}
 }

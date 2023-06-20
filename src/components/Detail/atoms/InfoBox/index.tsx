@@ -1,10 +1,15 @@
 import * as S from './style'
 import * as SVG from 'assets/svg'
+import { applyState } from 'Atoms/recoilAtom'
+import { useSetRecoilState } from 'recoil'
+import { DetailBoxProps } from 'types/components/Detail'
 
-const InfoBox = () => {
+const InfoBox = ({ title, support_boool }: DetailBoxProps) => {
+  const setState = useSetRecoilState(applyState)
+
   return (
     <S.Wrapper>
-      <S.Title>React 프론트엔드 개발자</S.Title>
+      <S.Title>{title}</S.Title>
       <S.BtnWrapper>
         <S.BookmarkBtn>
           {true ? (
@@ -19,8 +24,8 @@ const InfoBox = () => {
             </>
           )}
         </S.BookmarkBtn>
-        <S.ApplyBtn>
-          <>{'D-5'} 지원하기</>
+        <S.ApplyBtn onClick={() => !support_boool && setState(false)}>
+          {support_boool ? '지원완료' : '지원하기'}
         </S.ApplyBtn>
       </S.BtnWrapper>
       <S.SmallText>

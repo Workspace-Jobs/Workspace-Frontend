@@ -2,13 +2,13 @@ import * as S from './style'
 import * as SVG from 'assets/svg'
 import Image from 'next/image'
 import Link from 'next/link'
-import { EmployListProps } from 'types/components/employment'
 import { getBookmark } from 'api/employment'
 import { getImgUrl } from 'utils/getImgUrl'
+import { EmployListProps } from 'types/components/Employment'
 
 const PostItem = ({ id, title, img1, user, date }: EmployListProps) => {
   const bookmark = async () => {
-    getBookmark(id)
+    await getBookmark(id)
   }
   const url = getImgUrl(img1)
 
@@ -16,13 +16,15 @@ const PostItem = ({ id, title, img1, user, date }: EmployListProps) => {
     <Link href={`/detail/${id}`} passHref>
       <S.Wrapper>
         <S.Thumbnail>
-          <Image
-            alt="Thumbnail img"
-            src={url}
-            sizes="100%"
-            layout="fill"
-            priority={true}
-          />
+          {img1 && (
+            <Image
+              alt="Thumbnail img"
+              src={url}
+              sizes="100%"
+              layout="fill"
+              priority={true}
+            />
+          )}
         </S.Thumbnail>
         <S.ItemContent>
           <S.Title>{title}</S.Title>
