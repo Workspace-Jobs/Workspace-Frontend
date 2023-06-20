@@ -1,8 +1,8 @@
 import { PostFilterData } from 'assets/data/FilterData'
-import * as S from './style'
 import FilterItem from 'components/common/atoms/FilterItem'
 import { ModalOverayWrapper } from 'components/common/atoms/ModalOverayWrapper/style'
 import { EmployFilterType } from 'types/components/Employment'
+import * as S from './style'
 
 const FilterMenuModal = ({
   menu,
