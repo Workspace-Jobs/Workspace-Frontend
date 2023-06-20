@@ -19,7 +19,6 @@ const SignInForm = () => {
   const { register, watch, handleSubmit } = useForm<AuthForm>()
 
   const onSubmit: SubmitHandler<AuthForm> = async (e) => {
-    console.log(e)
     if (await signin(e.email, e.password)) {
       router.push('/')
     }
