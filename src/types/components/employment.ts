@@ -1,6 +1,6 @@
 import { ModalType } from 'types/common/Modal'
 
-export interface FilterType extends ModalType {
+export interface EmployFilterType extends ModalType {
   menu: string
   onClick: (filterMenu: string) => void
 }
