@@ -3,14 +3,12 @@ import * as SVG from 'assets/svg'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getBookmark } from 'api/employment'
-import { getImgUrl } from 'utils/getImgUrl'
 import { EmployListProps } from 'types/components/Employ'
 
 const PostItem = ({ id, title, img1, user, date }: EmployListProps) => {
   const bookmark = async () => {
     await getBookmark(id)
   }
-  const url = getImgUrl(img1)
 
   return (
     <Link href={`/detail/${id}`} passHref>
@@ -19,7 +17,7 @@ const PostItem = ({ id, title, img1, user, date }: EmployListProps) => {
           {img1 && (
             <Image
               alt="Thumbnail img"
-              src={url}
+              src={img1}
               sizes="100%"
               layout="fill"
               priority={true}

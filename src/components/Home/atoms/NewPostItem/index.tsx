@@ -1,18 +1,16 @@
 import * as S from './style'
 import Link from 'next/link'
 import Image from 'next/image'
-import { getImgUrl } from 'utils/getImgUrl'
 import { EmployListProps } from 'types/components/Employ'
 
 const NewPostItem = ({ id, title, img1, user, date }: EmployListProps) => {
-  const url = getImgUrl(img1)
   return (
     <Link href={`detail/${id}`} passHref>
       <S.Wrapper>
         <S.ProfilImg>
           <Image
             alt="Thumbnail img"
-            src={url}
+            src={img1}
             sizes="100%"
             layout="fill"
             priority={true}
