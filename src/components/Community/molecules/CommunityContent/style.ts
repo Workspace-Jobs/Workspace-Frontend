@@ -3,6 +3,13 @@ import { Palette } from 'styles/globals'
 
 export const Wrapper = styled.div`
   width: 78%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+`
+
+export const PostWrapper = styled.div`
+  width: 100%;
   height: calc(100vh - 206px);
   display: flex;
   flex-direction: column;
@@ -37,4 +44,11 @@ export const Content = styled.div`
 
 export const Tag = styled.div`
   display: flex;
+`
+
+export const CommentWrapper = styled.div`
+  width: 100%;
+  border: 1px solid ${Palette.NEUTRAL_N1};
+  border-radius: 8px;
+  padding: 32px 32px 100px;
 `

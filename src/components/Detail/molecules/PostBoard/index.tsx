@@ -1,12 +1,9 @@
 import * as S from './style'
 import Image from 'next/image'
 import Map from 'components/Detail/atoms/Map'
-import { getImgUrl } from 'utils/getImgUrl'
 import { EmployDetailProps } from 'types/components/Detail'
 
 const PostBoard = ({ detailDatas }: { detailDatas: EmployDetailProps }) => {
-  const url = getImgUrl(detailDatas?.img1)
-
   return (
     <S.Wrapper>
       {detailDatas && (
@@ -15,7 +12,7 @@ const PostBoard = ({ detailDatas }: { detailDatas: EmployDetailProps }) => {
             <S.Thumbnail>
               <Image
                 alt="Thumbnail img"
-                src={url}
+                src={detailDatas.img1}
                 layout="fill"
                 objectFit={'cover'}
                 priority={true}

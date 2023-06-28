@@ -17,7 +17,7 @@ import {
 import Button from 'components/Community/atoms/Button'
 import Profile from 'components/common/molecules/Profile'
 import { useRouter } from 'next/router'
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
+import { useRecoilState, useRecoilValue } from 'recoil'
 import { Palette } from 'styles/globals'
 import * as S from './style'
 
