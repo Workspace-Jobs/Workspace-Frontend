@@ -23,6 +23,9 @@ export const CommunityController = {
   likeCommunity(id: number | undefined) {
     return `/NB/good/${id}`
   },
+  comment(id: number | undefined) {
+    return `/NB/comment/${id}`
+  },
 }
 
 export const EmplymentController = {
