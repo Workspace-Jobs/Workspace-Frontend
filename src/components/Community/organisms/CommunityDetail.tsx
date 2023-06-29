@@ -1,14 +1,14 @@
+import { coDetailData, isCommunityWrite, likeState } from 'Atoms/recoilAtom'
+import { getCommunityDetail } from 'api/community'
 import CommonTitle from 'components/common/atoms/CommonTitle'
 import { CommonTemplate } from 'components/common/templates/CommonTemplate/style'
-import { CommunityTemplate } from './style'
-import LeftContent from '../molecules/LeftContent'
-import CommunityContent from '../molecules/CommunityContent'
-import { useEffect } from 'react'
-import { getCommunityDetail } from 'api/community'
 import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
-import { coDetailData, isCommunityWrite, likeState } from 'Atoms/recoilAtom'
+import CommunityContent from '../molecules/CommunityContent'
 import CommunityWrite from '../molecules/CommunityWrite'
+import LeftContent from '../molecules/LeftContent'
+import { CommunityTemplate } from './style'
 
 const CommunityDetail = () => {
   const route = useRouter()

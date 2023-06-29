@@ -90,3 +90,28 @@ export const delCommunity = async (id: number | undefined) => {
     return false
   }
 }
+
+export const getComment = async (id: number | undefined, page: string) => {
+  try {
+    const { data } = await apiClient.get(CommunityController.comment(id), {
+      params: {
+        page: page,
+      },
+    })
+    return data
+  } catch (e: any) {
+    return false
+  }
+}
+
+export const postComment = async (id: number, content: string | undefined) => {
+  try {
+    const { data } = await apiClient.post(CommunityController.comment(id), {
+      centent: content,
+    })
+    toast.success('등록되었습니다')
+    return { data }
+  } catch (e: any) {
+    return false
+  }
+}

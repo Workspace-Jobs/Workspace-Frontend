@@ -33,3 +33,11 @@ export interface CommunityForm {
   title?: string
   content?: string
 }
+
+export interface CommentListProps {
+  id: number
+  user: string
+  nb: number
+  date: string
+  centent: string
+}
