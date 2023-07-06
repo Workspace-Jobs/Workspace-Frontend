@@ -17,9 +17,7 @@ const NB = () => {
   return (
     <CommonTemplate>
       <CommonTitle title="내 글" />
-      <MyTemplate>
-        <MynbContent list={list} />
-      </MyTemplate>
+      <MyTemplate>{/* <MynbContent list={list} /> */}</MyTemplate>
     </CommonTemplate>
   )
 }
