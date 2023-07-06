@@ -9,7 +9,7 @@ const LikeContent = ({ list }: { list: LikeListProps[] | undefined }) => {
         list?.map((e, ind) => (
           <CommunityItem
             key={ind}
-            id={e.id}
+            id={e.nb.id}
             user={e.nb.user}
             title={e.nb.title}
             good_cnt={e.nb.good_cnt}
