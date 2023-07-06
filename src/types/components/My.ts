@@ -33,3 +33,11 @@ export interface LikeListProps {
     created_date: string
   }
 }
+
+export interface MynbListProps {
+  id: number
+  user: number
+  title: string
+  good_cnt: number
+  created_date: string
+}

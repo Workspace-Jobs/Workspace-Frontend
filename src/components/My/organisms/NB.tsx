@@ -1,27 +1,27 @@
+import { getMynb } from 'api/my'
 import CommonTitle from 'components/common/atoms/CommonTitle'
 import { CommonTemplate } from 'components/common/templates/CommonTemplate/style'
-import LikeContent from '../molecules/LikeContent'
-import { MyTemplate } from './style'
-import { getMyLikeList } from 'api/my'
 import { useEffect, useState } from 'react'
 import { LikeListProps } from 'types/components/My'
+import MynbContent from '../molecules/MynbContent'
+import { MyTemplate } from './style'
 
-const Like = () => {
+const NB = () => {
   const [list, setList] = useState<LikeListProps[]>()
   useEffect(() => {
-    getMyLikeList().then((res) => {
+    getMynb().then((res) => {
       setList(res?.data)
     })
   }, [])
 
   return (
     <CommonTemplate>
-      <CommonTitle title="좋아요" />
+      <CommonTitle title="내 글" />
       <MyTemplate>
-        <LikeContent list={list} />
+        <MynbContent list={list} />
       </MyTemplate>
     </CommonTemplate>
   )
 }
 
-export default Like
+export default NB

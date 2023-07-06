@@ -26,7 +26,7 @@ const PostItem = ({ id, title, img1, user, date }: EmployListProps) => {
         </S.Thumbnail>
         <S.ItemContent>
           <S.Title>{title}</S.Title>
-          <S.Company>{user.username}</S.Company>
+          <S.Company>{user?.username}</S.Company>
           <S.Text>{date}</S.Text>
         </S.ItemContent>
         <S.Bookmark

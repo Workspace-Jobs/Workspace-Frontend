@@ -12,7 +12,12 @@ const StatusContent = () => {
   const status = useRecoilValue(statusValue)
   const [list, setList] = useState<StatusListProps[]>()
   useEffect(() => {
-    getMyStatusList('지원 현황').then((res) => setList(res?.data))
+    let state = ''
+    if (status == '1') state = '지원 완료'
+    if (status == '2') state = '서류 통과'
+    if (status == '3') state = '최종 합격'
+    if (status == '4') state = '불합격'
+    getMyStatusList(state).then((res) => setList(res?.data))
   }, [status])
 
   return (
@@ -36,17 +41,6 @@ const StatusContent = () => {
             <S.SubText>{dateFillter(e.date)}</S.SubText>
           </S.ItemWrapper>
         ))}
-      {[0, 0, 0].map((e, ind) => (
-        <S.ItemWrapper
-          key={ind}
-          style={{ cursor: 'pointer' }}
-          onClick={() => setStatusModal(true)}
-        >
-          <S.SubText>여보야</S.SubText>
-          <S.SubText width={true}>React 프론트엔드 개발자</S.SubText>
-          <S.SubText>2023.03.03</S.SubText>
-        </S.ItemWrapper>
-      ))}
       {statusModal && (
         <StatusModal modalState={statusModal} setModalState={setStatusModal} />
       )}

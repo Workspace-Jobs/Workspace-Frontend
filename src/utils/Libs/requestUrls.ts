@@ -54,4 +54,5 @@ export const MyController = {
   myApply(id: string) {
     return `/NP/support/${id}`
   },
+  myNB: '/NP/NB/',
 }

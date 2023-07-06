@@ -25,11 +25,14 @@ export interface EmployDetailProps {
   date: Date | '상시'
   B_job: string
   job: string
+  mark_bool: boolean
 }
 
 export interface DetailBoxProps {
   title: string
   support_boool: boolean
+  id: number
+  bookmark: boolean
 }
 
 export interface ApplyBoxProps {

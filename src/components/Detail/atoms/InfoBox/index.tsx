@@ -1,26 +1,31 @@
+import { getBookmark } from 'api/employment'
 import * as S from './style'
 import * as SVG from 'assets/svg'
 import { applyState } from 'Atoms/recoilAtom'
 import { useSetRecoilState } from 'recoil'
 import { DetailBoxProps } from 'types/components/Detail'
 
-const InfoBox = ({ title, support_boool }: DetailBoxProps) => {
+const InfoBox = ({ title, support_boool, id, bookmark }: DetailBoxProps) => {
   const setState = useSetRecoilState(applyState)
+
+  const onBookmark = () => {
+    getBookmark(id)
+  }
 
   return (
     <S.Wrapper>
       <S.Title>{title}</S.Title>
       <S.BtnWrapper>
-        <S.BookmarkBtn>
-          {true ? (
-            <>
-              <SVG.BookmarkIcon />
-              북마크하기
-            </>
-          ) : (
+        <S.BookmarkBtn onClick={() => onBookmark()}>
+          {bookmark ? (
             <>
               <SVG.BookmarkcheckIcon />
               북마크완료
+            </>
+          ) : (
+            <>
+              <SVG.BookmarkIcon />
+              북마크하기
             </>
           )}
         </S.BookmarkBtn>

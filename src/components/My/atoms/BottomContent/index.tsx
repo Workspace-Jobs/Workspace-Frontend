@@ -38,7 +38,7 @@ const BottomContent = () => {
         </S.ContentWrapper>
       </S.Wrapper>
       <S.Wrapper>
-        <Link href="/my/asd">
+        <Link href="/my/mynb">
           <S.Header>
             <p>내 글</p>
             <SVG.ArrowIcon />

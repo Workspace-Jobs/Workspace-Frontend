@@ -13,6 +13,8 @@ const ApplyBoard = ({ detailDatas }: { detailDatas: EmployDetailProps }) => {
         <InfoBox
           title={detailDatas?.title}
           support_boool={detailDatas?.support_bool}
+          id={detailDatas?.id}
+          bookmark={detailDatas.mark_bool}
         />
       ) : (
         <ApplyBox />
