@@ -37,3 +37,10 @@ export const getMyLikeList = async () => {
     return { data }
   } catch (e: any) {}
 }
+
+export const getMynb = async () => {
+  try {
+    const { data } = await apiClient.get(MyController.myNB)
+    return { data }
+  } catch (e: any) {}
+}
